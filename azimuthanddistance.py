@@ -72,19 +72,9 @@ print(df_merge_col['azimuth1'])
 def towtogps(x):
    return x['azimuth1'].add(360)
 
-
-# Apply a user defined function to each column by doubling each value in each column
-# df_merge_col.loc[df_merge_col.azimuth1 < 0, 'azimuth1'] + 360
-
 df_merge_col['azimuth1'] = df_merge_col.loc[df_merge_col.azimuth1 < 0, 'azimuth1'] + 360
-# df1['A'].values[df1['A'] > 9] = 11
 
-# if df_merge_col.azimuth1 < 0:
-#     df_merge_col['azimuthTowertoCell'] = df_merge_col.apply(towtogps, axis = 1)
-# else:
-#     pass
 print(df_merge_col['azimuth1'])
-# print(df_merge_col['azimuthTowertoCell'])
 
 df_merge_col.to_csv('testdist.csv')
 
